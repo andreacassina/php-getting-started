@@ -24,7 +24,9 @@
 			
 			$obj = json_decode($json);
 			echo "JSON </br></br></br></br>";
-			echo "$obj";
+			print_r($obj['Result']);
+			
+			
 		?>
 	</body>
 </html>

@@ -1,6 +1,30 @@
 <html>
 	<head>
 		<title>Pizzerie di Bergamo</title>
+		<style>
+		#customers {
+		    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		    border-collapse: collapse;
+		    width: 100%;
+		}
+
+		#customers td, #customers th {
+		    border: 1px solid #ddd;
+		    padding: 8px;
+		}
+
+		#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+		#customers tr:hover {background-color: #ddd;}
+
+		#customers th {
+		    padding-top: 12px;
+		    padding-bottom: 12px;
+		    text-align: left;
+		    background-color: #4CAF50;
+		    color: white;
+		}
+		</style>
 	</head>
 	<body>
 		<?php
@@ -23,15 +47,20 @@
 			//echo "$resp";
 			
 			$obj = json_decode($json);
+			echo "<table id='customers'>";
+			echo "<th>Nome</th>";
+			echo "<th>Latitudine</th>";
+			echo "<th>Longitudine</th>";
 			
-			//echo $obj->response->venues[$i]->name;
 			for($i=0;$i<$numero;$i++)
 			{
-				echo $obj->response->venues[$i]->name;
-				echo $obj->response->venues[$i]->location->lat;
-				echo $obj->response->venues[$i]->location->lng;
+				echo "<tr>";
+				echo "<td>".$obj->response->venues[$i]->name."</td>";
+				echo "<td>".$obj->response->venues[$i]->location->lat."</td>";
+				echo "<td>".$obj->response->venues[$i]->location->lng."</td>";
+				echo "</tr>";
 			}
-		
+			echo "</table>";
 			curl_close($curl);
 		?>
 	</body>

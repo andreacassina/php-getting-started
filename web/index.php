@@ -12,21 +12,15 @@
 			
 			$indirizzo = "https://api.foursquare.com/v2/venues/search?client_id=$client_id&client_secret=$client_secret&query=$query&v=20170801";
 			
-			$curl = curl_init($indirizzo);
-			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 			
-			$curl_response = curl_exec($curl);
-			if ($curl_response === false) 
-			{
-				$info = curl_getinfo($curl);
-				curl_close($curl);
-				die('ERRORE');
-			}
+			// Get cURL resource
+			$curl = curl_init();
+			// Set some options - we are passing in a useragent too here
+			curl_setopt_array($curl, array(CURLOPT_RETURNTRANSFER => 1,CURLOPT_URL => $indirizzo,CURLOPT_USERAGENT => 'Codular Sample cURL Request'));
+			// Send the request & save response to $resp
+			$resp = curl_exec($curl);
+			// Close request to clear up some resources
 			curl_close($curl);
-			$decoded = json_decode($curl_response);
-			if (isset($decoded->response->status) && $decoded->response->status == 'ERROR') {
-				die('error occured: ' . $decoded->response->errormessage);
-			}
 		?>
 	</body>
 </html>

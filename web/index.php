@@ -10,7 +10,7 @@
 			$client_id = "11XI0DDGN1GS1UWD2CQ0J4JPSI3MIYDX1QVI4ZNR4SOTPBKC";
 			$client_secret = "CXE2TQI3BBFKVLY5MIG5TSHCDIQOY3ABMT4BMNBQU4IUKY0J";
 			
-			$indirizzo = "https://api.foursquare.com/v2/venues/search?client_id=$client_id&client_secret=$client_secret&query=$query&v=20161016";
+			$indirizzo = "https://api.foursquare.com/v2/venues/search?client_id=$client_id&client_secret=$client_secret&intent=checkin&query=$query&v=20161016";
 			
 		
 			// Get cURL resource

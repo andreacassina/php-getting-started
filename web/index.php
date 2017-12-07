@@ -23,6 +23,7 @@
 			//echo "$resp";
 			
 			$obj = json_decode($json);
+			echo "JSON </br></br></br></br>";
 			echo "$obj";
 		?>
 	</body>

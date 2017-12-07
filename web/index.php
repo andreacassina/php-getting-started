@@ -28,8 +28,8 @@
 			for($i=0;$i<&numero;$i++)
 			{
 				echo "$obj->response->venues[$i]->name </br>";
-				echo "$obj->response->venues[$i]->lat </br>";
-				echo "$obj->response->venues[$i]->lng </br>";
+				echo "$obj->response->venues[$i]->location->lat </br>";
+				echo "$obj->response->venues[$i]->location->lng </br>";
 				echo "</br></br></br>";
 			}
 			

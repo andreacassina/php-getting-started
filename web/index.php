@@ -7,11 +7,9 @@
 			$citta = 'Bergamo';
 			$numero = 10;
 			$query = 'pizzeria';
-			$client_id = "11XI0DDGN1GS1UWD2CQ0J4JPSI3MIYDX1QVI4ZNR4SOTPBKC";
-			$client_secret = "CXE2TQI3BBFKVLY5MIG5TSHCDIQOY3ABMT4BMNBQU4IUKY0J";
 			
-			$indirizzo = "https://api.foursquare.com/v2/venues/search?client_id=$client_id&client_secret=$client_secret&intent=checkin&query=$query&v=20161016";
-			
+			$indirizzo = "https://api.foursquare.com/v2/venues/search?v=20161016&client_id=11XI0DDGN1GS1UWD2CQ0J4JPSI3MIYDX1QVI4ZNR4SOTPBKC&client_secret=CXE2TQI3BBFKVLY5MIG5TSHCDIQOY3ABMT4BMNBQU4IUKY0J&query=pizzeria&lim=10&near=bergamo";
+	//		$indirizzo = "https://api.foursquare.com/v2/venues/search?v=20161016&client_id=11XI0DDGN1GS1UWD2CQ0J4JPSI3MIYDX1QVI4ZNR4SOTPBKC&client_secret=CXE2TQI3BBFKVLY5MIG5TSHCDIQOY3ABMT4BMNBQU4IUKY0J&query=$query&lim=$numero&near=$citta";
 		
 			// Get cURL resource
 			$curl = curl_init();

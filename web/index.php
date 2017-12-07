@@ -21,6 +21,8 @@
 			$resp = curl_exec($curl);
 			// Close request to clear up some resources
 			curl_close($curl);
+				
+			echo "$resp";
 		?>
 	</body>
 </html>

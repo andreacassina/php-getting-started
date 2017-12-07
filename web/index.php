@@ -20,11 +20,11 @@
 			// Close request to clear up some resources
 			curl_close($curl);
 
-			echo "$resp";
-			/*
-			$obj = json_decode($json);
+			//echo "$resp";
 			
-			echo $obj->response->venues[$i]->name;
+			$obj = json_decode($json);
+			/*
+			//echo $obj->response->venues[$i]->name;
 			for($i=0;$i<&numero;$i++)
 			{
 				echo $obj->response->venues[$i]->name;

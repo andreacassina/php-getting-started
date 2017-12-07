@@ -23,9 +23,15 @@
 			//echo "$resp";
 			
 			$obj = json_decode($json);
-			echo "JSON </br></br></br></br>";
-			print_r($obj['Result']);
 			
+			
+			for($i=0;$i<&numero;$i++)
+			{
+				echo "$obj->response->venues[$i]->name </br>";
+				echo "$obj->response->venues[$i]->lat </br>";
+				echo "$obj->response->venues[$i]->lng </br>";
+				echo "</br></br></br>";
+			}
 			
 		?>
 	</body>

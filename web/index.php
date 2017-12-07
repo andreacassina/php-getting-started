@@ -18,7 +18,7 @@
 			// Send the request & save response to $resp
 			$json = curl_exec($curl);
 			// Close request to clear up some resources
-			curl_close($curl);
+			
 
 			//echo "$resp";
 			
@@ -31,7 +31,8 @@
 				echo $obj->response->venues[$i]->location->lat;
 				echo $obj->response->venues[$i]->location->lng;
 			}
-			
+		
+			curl_close($curl);
 		?>
 	</body>
 </html>

@@ -34,18 +34,14 @@
 			
 			$indirizzo = "https://api.foursquare.com/v2/venues/search?v=20161016&client_id=11XI0DDGN1GS1UWD2CQ0J4JPSI3MIYDX1QVI4ZNR4SOTPBKC&client_secret=CXE2TQI3BBFKVLY5MIG5TSHCDIQOY3ABMT4BMNBQU4IUKY0J&query=$query&lim=$numero&near=$citta";
 		
-			// Get cURL resource
 			$curl = curl_init();
-			// Set some options - we are passing in a useragent too here
 			curl_setopt_array($curl, array(CURLOPT_RETURNTRANSFER => 1,CURLOPT_URL => $indirizzo));
-			// Send the request & save response to $resp
+			// invio la richiesta e salvo la risposta in $json
 			$json = curl_exec($curl);
-			// Close request to clear up some resources
 			
-
-			//echo "$resp";
-			
+			//decodificoo la risposta json
 			$obj = json_decode($json);
+			//creo la tabella
 			echo "<table id='customers'>";
 			echo "<th>Nome</th>";
 			echo "<th>Latitudine</th>";
